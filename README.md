@@ -14,6 +14,19 @@ Assumptions
 
 Examples
 ========
+Your models are already defined on the server why should you  need to redefine them on the server?
+To transform a JavaScript object (model) to a viewModel just pass the model into a viewModel constructor as the first argument.
+
+```javascript
+var userModel = {
+  email: 'example@example.com',
+  dateJoined: 1110862800000 // Unix time for March 15, 2005
+};
+var viewModel = new BaseViewModel(userModel);
+viewModel.email(); // example@example.com
+viewModel.dateJoined(); // 1110862800000
+```
+
 Create a new ViewModel class.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
