@@ -27,6 +27,22 @@ viewModel.email(); // example@example.com
 viewModel.dateJoined(); // 1110862800000
 ```
 
+#Complex models
+BaseViewModel never wraps objects in observables instead it will recursively check all of the object's propertues to 
+find numeric, string, or array values to wrap in observables.
+```javascript
+var userModel = {
+  email: 'example@example.com',
+  dateJoined: 1110862800000, // Unix time for March 15, 2005
+  roll: {
+    name: 'admin'
+  }
+};
+var viewModel = new BaseViewModel(userModel);
+viewModel.roll.name(); // 'admin'
+
+```
+
 Create a new ViewModel class.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
