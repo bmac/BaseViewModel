@@ -82,3 +82,29 @@ viewModel.email(); // example@example.com
 viewModel.expandDropdown(); // false
 viewModel.showIcons(); // true
 ```
+
+
+Simple computed observables?
+```javascript
+var UserViewModel = BaseViewModel.extend({
+  computed: {
+    gravatarUrl: function() {
+      var hash = md5(this.email().trim().toLowerCase());
+      return 'http://www.gravatar.com/avatar/' + hash;
+    }
+  },
+  // init is the contructor function
+  init: function(model) {
+    // if you overwite function in a parent class you can call the parent function using _super
+    this._super(model);
+  },
+  // other functions can be defined here
+  noop: function() {}
+});
+
+var userModel = {
+  email: 'example@example.com',
+  dateJoined: 1110862800000 // Unix time for March 15, 2005
+};
+var viewModel = new UserViewModel(userModel);
+```
