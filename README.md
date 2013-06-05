@@ -107,4 +107,5 @@ var userModel = {
   dateJoined: 1110862800000 // Unix time for March 15, 2005
 };
 var viewModel = new UserViewModel(userModel);
+viewModel.gravatarUrl(); // 'http://www.gravatar.com/avatar/7306a21d8e9bdae642aa57606d8393f4'
 ```
