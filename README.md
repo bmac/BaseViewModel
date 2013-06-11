@@ -1,7 +1,7 @@
 BaseViewModel
 =============
 
-A useful way to create knockout viewModels.
+A class based method for creating knockout viewModels.
 
 Assumptions
 ===========
