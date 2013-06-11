@@ -34,3 +34,16 @@ test('Properties of the first argument should override default properties', 1, f
 
     equal(viewModel.foo(), 'bar');
 });
+
+test('BaseViewModel should convert the properties of the computed object to computed functions', 1, function(){
+var TestViewModel = BaseViewModel.extend({
+        computed: {
+            loudFoo: function() {
+                return this.foo().toUpperCase() + '!';   
+            }
+        }
+    });
+    var viewModel = new TestViewModel({foo: 'foo'});
+
+    equal(viewModel.loudFoo(), 'FOO!');
+});
