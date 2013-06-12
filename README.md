@@ -1,7 +1,7 @@
 BaseViewModel
 =============
 
-A class based method for creating knockout viewModels.
+BaseViewModel uses [John Resig's simple javascript inheritance](http://ejohn.org/blog/simple-javascript-inheritance/) to provide a class based method for creating [Knockout.js](http://knockoutjs.com/) viewModels.
 
 Assumptions
 ===========
