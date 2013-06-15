@@ -27,7 +27,7 @@ viewModel.email(); // example@example.com
 viewModel.dateJoined(); // 1110862800000
 ```
 
-#Complex models
+###Complex models
 BaseViewModel never wraps objects in observables instead it will recursively check all of the object's propertues to 
 find numeric, string, or array values to wrap in observables.
 ```javascript
@@ -43,7 +43,7 @@ viewModel.roll.name(); // 'admin'
 
 ```
 
-Create a new ViewModel class.
+###Create a new ViewModel class.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
   // init is the contructor function
@@ -56,7 +56,7 @@ var UserViewModel = BaseViewModel.extend({
 });
 ```
 
-Add extra state observables to a viewModel
+###Add extra state observables to a viewModel
 Create a new ViewModel class.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
@@ -83,7 +83,7 @@ viewModel.expandDropdown(); // false
 viewModel.showIcons(); // true
 ```
 
-Values outside the defaults dict will not be wrapped in observables.
+###Values outside the defaults dict will not be wrapped in observables.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
   resourceUri: '/api/user/'
@@ -105,7 +105,7 @@ viewModel.resourceUri; // '/api/user/'
 ```
 
 
-Simple computed observables?
+###Simple computed observables?
 ```javascript
 var UserViewModel = BaseViewModel.extend({
   computed: {
