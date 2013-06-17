@@ -3,15 +3,6 @@ BaseViewModel
 
 BaseViewModel uses [John Resig's simple javascript inheritance](http://ejohn.org/blog/simple-javascript-inheritance/) to provide a class based method for creating [Knockout.js](http://knockoutjs.com/) viewModels.
 
-Assumptions
-===========
-- Models are defined on the backend and provided to the client in a JSON format
-- It should be trivial to transform a javascript object from the server into a viewModel knockout can use for databinding
-- View models often have extra state these should be easy to define
-- View models often have event handeler functions, these should be easy to define
-- View models often have computed function these should be easy to define
-- The viewModel should be easy to test
-
 Examples
 ========
 Your models are already defined on the server why should you  need to redefine them on the server?
@@ -130,3 +121,12 @@ var userModel = {
 var viewModel = new UserViewModel(userModel);
 viewModel.gravatarUrl(); // 'http://www.gravatar.com/avatar/7306a21d8e9bdae642aa57606d8393f4'
 ```
+
+Assumptions
+===========
+- Models are defined on the backend and provided to the client in a JSON format
+- It should be trivial to transform a javascript object from the server into a viewModel knockout can use for databinding
+- View models often have extra state these should be easy to define
+- View models often have event handeler functions, these should be easy to define
+- View models often have computed function these should be easy to define
+- The viewModel should be easy to test
