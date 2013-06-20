@@ -5,7 +5,6 @@ BaseViewModel uses [John Resig's simple javascript inheritance](http://ejohn.org
 
 Examples
 ========
-Your models are already defined on the server why should you  need to redefine them on the server?
 To transform a JavaScript object (model) to a viewModel just pass the model into a viewModel constructor as the first argument.
 
 ```javascript
