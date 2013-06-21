@@ -3,6 +3,9 @@ BaseViewModel
 
 BaseViewModel uses [John Resig's simple javascript inheritance](http://ejohn.org/blog/simple-javascript-inheritance/) to provide a class based method for creating [Knockout.js](http://knockoutjs.com/) viewModels.
 
+MVVM
+====
+
 Examples
 ========
 To transform a JavaScript object (model) to a viewModel just pass the model into a viewModel constructor as the first argument.
