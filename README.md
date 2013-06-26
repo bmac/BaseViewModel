@@ -5,6 +5,7 @@ BaseViewModel uses [John Resig's simple javascript inheritance](http://ejohn.org
 
 MVVM
 ====
+Knockout uses a model view view model pattern.
 
 Examples
 ========
