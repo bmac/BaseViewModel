@@ -1,6 +1,7 @@
 {
   "name": "BaseViewModel",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "main": "src/baseViewModel.js",
   "ignore": [
     "**/.*",
     "node_modules",
