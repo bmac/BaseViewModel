@@ -1,5 +1,5 @@
 {
-  "name": "BaseViewModel",
+  "name": "baseviewmodel",
   "description": "ViewModes made easy",
   "version": "0.1.0",
   "engines": {
