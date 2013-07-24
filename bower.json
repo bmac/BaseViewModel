@@ -9,6 +9,7 @@
   ],
   "dependencies": {
     "knockout": "2.2.1",
-    "Class.js": "~1.0.0"
+    "Class.js": "~1.0.0",
+    "requirejs": "~2.1.8"
   }
 }
