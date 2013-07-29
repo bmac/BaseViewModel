@@ -48,6 +48,11 @@ viewModel.roll.name(); // 'admin'
 ```
 
 ###Create a new ViewModel class.
+You can create new ViewModel classes by calling extend on an existing ViewModel class object. This will create a new
+ViewModel class object that is a prototype of its parent ViewModel class. You can call a parent's function
+from within a child function by calling this._super();. The `init` function is always called when a class is 
+instantiated. If you override this function remember to call this._super() so BaseViewModel can finish setting
+everything up.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
   // init is the contructor function
@@ -58,10 +63,13 @@ var UserViewModel = BaseViewModel.extend({
   // other functions can be defined here
   noop: function() {}
 });
+
+var user = new UserViewModel(userModel);
 ```
 
-###Add extra state observables to a viewModel
-Create a new ViewModel class.
+###Add extra state observables to a ViewModel
+Similar to backbone.js BaseViewModel lets you specify properties in a defaults
+object to create extra observable properties on the ViewModel when it is instantiated.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
   defaults: {
@@ -87,7 +95,7 @@ viewModel.expandDropdown(); // false
 viewModel.showIcons(); // true
 ```
 
-###Values outside the defaults dict will not be wrapped in observables.
+###Values outside the defaults object will not be wrapped in observables.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
   resourceUri: '/api/user/'
@@ -109,7 +117,9 @@ viewModel.resourceUri; // '/api/user/'
 ```
 
 
-###Simple computed observables?
+###Computed observables
+Functions and objects found inside the `computed` object will be automatically wrapped in ko.computed functions
+and added as proterties to the ViewModel.
 ```javascript
 var UserViewModel = BaseViewModel.extend({
   computed: {
