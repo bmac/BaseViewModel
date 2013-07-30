@@ -29,7 +29,7 @@
             computedExtend(this, this.computed);
             this._modelKeys = Object.keys(object || {});
         },
-        toJSON: function() {
+        toModel: function() {
             var model = ko.toJS(this);
             var copy = {};
             for (var i in this._modelKeys) {
