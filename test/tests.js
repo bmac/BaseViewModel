@@ -47,3 +47,16 @@ var TestViewModel = BaseViewModel.extend({
 
     equal(viewModel.loudFoo(), 'FOO!');
 });
+
+test('toJSON will only expose properties on the original model', 3, function(){
+    var TestViewModel = BaseViewModel.extend({
+        defaults: {
+            foo: 'foo'
+        }
+    });
+    var viewModel = new TestViewModel({bar: 'baz'});
+
+    equal(viewModel.toJSON().foo, undefined);
+    equal(viewModel.toJSON().bar, 'baz');
+    deepEqual(Object.keys(viewModel.toJSON()), ['bar']);
+});

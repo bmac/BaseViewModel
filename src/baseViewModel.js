@@ -27,7 +27,19 @@
             observableExtend(this, this.defaults);
             observableExtend(this, object);
             computedExtend(this, this.computed);
-        }        
+            this._modelKeys = Object.keys(object || {});
+        },
+        toJSON: function() {
+            var model = ko.toJS(this);
+            var copy = {};
+            for (var i in this._modelKeys) {
+                var key = this._modelKeys[i];
+                if (key in model) {
+                    copy[key] = model[key];
+                }
+            }
+            return copy;
+        }
     });
 
     window.BaseViewModel = baseViewModel;
