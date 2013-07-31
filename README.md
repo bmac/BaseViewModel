@@ -47,6 +47,21 @@ viewModel.roll.name(); // 'admin'
 
 ```
 
+###Get Models From ViewModels
+The `toModel` function will return an object with all the properties from the original model.
+```javascript
+var userModel = {
+  email: 'example@example.com',
+  dateJoined: 1110862800000, // Unix time for March 15, 2005
+  roll: {
+    name: 'admin'
+  }
+};
+var viewModel = new BaseViewModel(userModel);
+viewModel.email('new@domain.com')
+viewModel.toModel(); // {email: 'new@domain.com', dateJoined: 1110862800000, roll: {name: 'admin'}}
+```
+
 ###Create a new ViewModel class.
 You can create new ViewModel classes by calling extend on an existing ViewModel class object. This will create a new
 ViewModel class object that is a prototype of its parent ViewModel class. You can call a parent's function
